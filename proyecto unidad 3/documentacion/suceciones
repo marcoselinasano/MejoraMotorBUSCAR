@@ -1,0 +1,53 @@
+se puede defiinir como una lista ordenada de numeros que sigue un patron esp 
+cada numero de la lista se llama ´termino'
+su poscision dentro de la lista se denomina indice
+
+Tipos de Sucesiones
+
+Aritméticas: Cada término se obtiene sumando una cantidad fija (la diferencia) al término anterior.
+Geométricas: Cada término se obtiene multiplicando el término anterior por una cantidad fija (la razón).
+Fibonacci: Cada término es la suma de los dos anteriores.
+Otras: Existenotras sucesiones, como las armónicas, las de Bernoulli, etc., cada una con sus propias característica
+
+SON IMPORTANTES AL SER BASNTANTE PRACTICAS
+en el ambito de la matematica,informatica,fisica
+
+sienedo algoritmos de busqueda ,ordenamiento y diseño de estructura de BD
+lo que nos sirve y compete
+
+
+¿COMO IMPLEMENTAMOS EN PYTHON?
+EJ:
+  
+  1- en listas:
+  sucesion_arit=[1,4,6,12]
+  2- o tuplas 
+   sucesion_geom=(1,4,6,12)
+
+  3-generadores fibonachi
+  calcula una sucesion de forma eficiente solo cuando se requiere
+  (ahorrando muchos recurso"mas rapido)
+  lo que significa que puede pausarse y reanudarse
+  def fibonacci():#yield = producir
+    a, b = 0, 1 
+    while True: #este while es infinito
+        yield a  #En cada iteración del bucle, el generador produce (yield) el valor de a, luego actualiza los valores de a y b para que representen el próximo par de términos de Fibonacci.
+        a, b = b, a+b
+
+   Crear un generador
+  fib = fibonacci()
+   Obtener los primeros 10 términos
+  for i in range(10): #Por último, se itera 10 veces, imprimiendo los 10 primeros términos de la secuencia de Fibonacci, obtenidos mediante la función next(fib).
+    print(next(fib))
+
+  4 y por ultimo Compresiones de listas:
+
+Una forma concisa de crear listas a partir de expresiones.
+Python
+# Cuadrados de los primeros 10 números naturales
+cuadrados = [x**2 for x in range(10)]
+
+En resumen, las sucesiones son una herramienta fundamental en programación y matemáticas.
+ Python ofrece una amplia variedad de formas para trabajar con ellas, desde las listas más simples 
+  hasta los generadores más sofisticados. Al comprender los conceptos básicos y las diferentes implementaciones,
+     podrás aplicar las sucesiones a una gran variedad de problemas.

@@ -1,0 +1,24 @@
+tambien llamada serie es la suma de todos los terminos 
+de una sucecion se representa con -sigma- 
+se usa para mostrar de forma compacta operaciones repetivas
+
+Relación entre sucesiones y sumatorias:
+
+Cada término de una sumatoria proviene de una sucesión.
+El índice de la sumatoria indica la posición del término en la sucesión.
+Los límites de la sumatoria determinan desde qué término hasta qué término se suma.
+
+EN PYTHON HAY MUCHAS MANERAS DE VER UNA SUMATORIA
+
+1 con bulce for
+suma = 0
+for i in range(0,6):
+  suma +=1
+  print(i)
+
+en lista o con funciones como 
+Range o sum
+Aplicaciones de las sumatorias:
+
+en que usar
+Cálculo de áreas: Muchas fórmulas de cálculo de áreas se basan en sumatorias.

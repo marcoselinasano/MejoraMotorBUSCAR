@@ -1,0 +1,137 @@
+"""
+PREGUNTAS
+
+¿como se que los datos van a venir de manera ordenada o des ordenada?
+Verificar la ordenación antes de realizar la búsqueda.
+tarea0 implementar un mecanismo para ordenar los datos al insertar nuevos registros o antes de realizar la búsqueda.
+Árboles: Los árboles binarios de búsqueda mantienen los datos ordenados de forma natural y permiten búsquedas eficientes.
+
+los arboles son una estrucura de orden jerarquico imagina 1 arbol genalogico y que cada persona es un nodo
+y las líneas que los conectan representan relaciones de parentesco. 
+los arboles binarios
+es especial donde cada nodo puede tener como máximo dos hijos: un hijo izquierdo y un hijo derecho 
+      10
+     /  \
+    5    15
+   / \   / \
+  3  7 13  18
+
+
+METOODS DE BUSQUEDA:
+
+1-LINEAL
+es la mas intuitiva consiste en recorrer todos loe elementos de una lista 
+para encontrarlo y es su ve el mas ineficiente porque compara cada resultado con el valor a encontrarlo
+ej:
+        lista = [2, 4, 5, 7, 8, 9, 12]
+        elemento_buscado = 7
+        resultado = busqueda_lineal(lista, elemento_buscado)
+        if resultado != -1:
+        print("El elemento se encuentra en el índice:", resultado)
+        else:
+        print("El elemento no se encontró")
+
+2.BINARIA 
+es mucho mas rapido pero requier que la lista este ordenada Funciona dividiendo repetidamente la lista por la mitad,
+ comparando el elemento del medio con el valor buscado y descartando la mitad que no contiene el valor.
+ej: 
+        def busqueda_binaria(lista, elemento):
+                izquierda = 0
+                derecha = len(lista) - 1
+                while izquierda <= derecha:
+                medio = (izquierda + derecha) // 2
+                if lista[medio] == elemento:
+                return medio
+                elif lista[medio] < elemento:
+          izquierda = medio + 1
+    else:
+      derecha = medio 
+ - 1
+  return -1
+
+3- POLARIZADA 
+
+es una variacion de la busqueda binaria que divide en 2 parte 1 mas grande que la otra
+su velozidad depende de la distribuvion de la lista
+
+Búsquedas en Programación: Binaria, Lineal y Polarizada
+Búsqueda Lineal
+La búsqueda lineal es el método más intuitivo pero menos eficiente para encontrar un elemento en una lista. Consiste en recorrer la lista secuencialmente, comparando cada elemento con el valor buscado hasta encontrarlo o llegar al final de la lista.
+
+Ejemplo en Python:
+
+Python
+def busqueda_lineal(lista, elemento):
+  for i in range(len(lista)):
+    if lista[i] == elemento:
+      return i
+  return -1
+
+# Ejemplo de uso:
+lista = [2, 4, 5, 7, 8, 9, 12]
+elemento_buscado = 7
+resultado = busqueda_lineal(lista, elemento_buscado)
+if resultado != -1:
+  print("El elemento se encuentra en el índice:", resultado)
+else:
+  print("El elemento no se encontró")
+Usa el código con precaución.
+
+Búsqueda Binaria
+La búsqueda binaria es un algoritmo mucho más eficiente que la búsqueda lineal, pero requiere que la lista esté ordenada. Funciona dividiendo repetidamente la lista por la mitad, comparando el elemento del medio con el valor buscado y descartando la mitad que no contiene el valor.
+
+Ejemplo en Python:
+
+Python
+def busqueda_binaria(lista, elemento):
+  izquierda = 0
+  derecha = len(lista) - 1
+  while izquierda <= derecha:
+    medio = (izquierda + derecha) // 2
+    if lista[medio] == elemento:
+      return medio
+    elif lista[medio] < elemento:   
+
+      izquierda = medio + 1
+    else:
+      derecha = medio   
+ - 1
+  return -1
+Usa el código con precaución.
+
+Búsqueda Polarizada
+La búsqueda polarizada es una variante de la búsqueda binaria que puede ser útil en ciertas situaciones. En lugar de dividir la lista en dos partes iguales, se divide en una parte pequeña y otra grande. La idea es que el elemento buscado tenga más probabilidad de estar en la parte grande. Sin embargo, su eficiencia depende de la distribución de los datos y no es un algoritmo universalmente mejor que la búsqueda binaria.
+
+Ejemplo en Python:
+
+Python
+def busqueda_polarizada(lista, elemento, polarizacion=0.75):
+  izquierda = 0
+  derecha = len(lista) - 1
+  while izquierda <= derecha:
+    medio = int(izquierda + polarizacion * (derecha - izquierda))
+    if lista[medio] == elemento:
+      return medio
+    elif lista[medio] < elemento:
+      izquierda = medio + 1
+    else:
+      derecha = medio - 1
+  return -1
+Usa el código con precaución.
+
+Cuando usar?
+
+Búsqueda lineal: Útil para listas pequeñas o cuando no se puede garantizar que la lista esté ordenada.
+Búsqueda binaria: Ideal para listas grandes y ordenadas. Es mucho más eficiente que la búsqueda lineal en estos 
+casos.
+Búsqueda polarizada: Puede ser útil en casos específicos donde se tiene información sobre la distribución
+ de los datos y se desea ajustar el algoritmo para obtener un mejor rendimiento
+ 
+ 
+Herramientas USADaS:
+
+
+python   NumPy, Pandas, Matplotlib, SymP
+Tinker  para crear la interfaz
+geogebra vista grafica
+"""
